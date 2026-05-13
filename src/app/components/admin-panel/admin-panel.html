@@ -1,0 +1,8 @@
+ <h2>Leads recibidos</h2>
+ @for (lead of leads; track lead.id) {
+
+    <p>{{lead.name}} - {{lead.phone}}</p>
+    <p>{{lead.message}}</p>
+    <hr />
+}
+   
