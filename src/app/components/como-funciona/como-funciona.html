@@ -1,0 +1,47 @@
+ <section id="funciona" class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
+            Tres pasos para capturar leads
+          </h2>
+          <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            Tan simple como 1, 2, 3. Comienza en minutos, no en horas.
+          </p>
+        </div>
+
+        <!-- Steps -->
+        <div class="grid md:grid-cols-3 gap-8">
+         @for (step of steps; track step.title; let i = $index) {
+            <div class="relative group">
+              <!-- Conector -->
+               @if (i < steps.length - 1) {
+              <div  class="hidden md:block absolute top-20 left-full w-8 h-0.5 bg-gradient-to-r from-emerald-400 to-emerald-500 group-hover:from-emerald-500 group-hover:to-emerald-600 transition-all duration-300"></div>
+               }
+              <!-- Card -->
+              <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 h-full">
+                <!-- Número -->
+                <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                  <span class="text-white font-bold text-lg">{{ i + 1 }}</span>
+                </div>
+
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">{{ step.title }}</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">{{ step.description }}</p>
+
+                <!-- Ejemplo -->
+                <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 space-y-2">
+                 @for (example of step.examples; track example) {
+                    <div class="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
+                      <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span>{{ example }}</span>
+                    </div>
+                }
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
