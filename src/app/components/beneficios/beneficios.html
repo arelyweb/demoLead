@@ -1,0 +1,26 @@
+ <section id="beneficios" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/50">
+      <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
+            Todo lo que necesitas para triunfar
+          </h2>
+          <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            Herramientas poderosas diseñadas para simplificar tu proceso de captura de leads
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid md:grid-cols-3 gap-8">
+         @for (benefit of benefits; track benefit.title) {
+            <div class="group p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-400">
+              <div class="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/20 dark:to-emerald-800/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-emerald-600 dark:text-emerald-400" [innerHTML]="benefit.icon" fill="currentColor"></svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">{{ benefit.title }}</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">{{ benefit.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
